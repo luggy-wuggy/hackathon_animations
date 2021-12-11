@@ -8,23 +8,30 @@ class MapFAB extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      shape: const CircleBorder(),
-      color: const Color(0xFF57b894),
-      child: InkWell(
-        customBorder: const CircleBorder(),
-        onTap: () => Get.to(const MapPage()),
-        child: const SizedBox(
-          height: 56,
-          width: 56,
-          child: Center(
-            child: Icon(
-              Icons.map_rounded,
-              color: Colors.white,
+    return OpenContainer(
+      openBuilder: (context, action) {
+        return const MapPage();
+      },
+      tappable: false,
+      closedShape: const CircleBorder(),
+      closedColor: const Color(0xFF57b894),
+      closedElevation: 6,
+      closedBuilder: (context, action) {
+        return InkWell(
+          customBorder: const CircleBorder(),
+          onTap: () => action,
+          child: const SizedBox(
+            height: 56,
+            width: 56,
+            child: Center(
+              child: Icon(
+                Icons.map_rounded,
+                color: Colors.white,
+              ),
             ),
           ),
-        ),
-      ),
+        );
+      },
     );
   }
 }

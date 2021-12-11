@@ -1,23 +1,23 @@
-// import 'package:flutter/material.dart';
-// import 'package:get/state_manager.dart';
+import 'package:flutter/material.dart';
+import 'package:get/state_manager.dart';
 
-// class CharityScrollController extends GetxController {
-//   late ScrollController controller;
-//   var isTitleShowing = true.obs;
+class CharityScrollController extends GetxController {
+  late ScrollController controller;
+  var isTitleShowing = true.obs;
 
-//   @override
-//   void onInit() {
-//     super.onInit();
-//     controller = ScrollController();
+  @override
+  void onInit() {
+    super.onInit();
+    controller = ScrollController();
 
-//     controller.addListener(() {
-//       isTitleShowing(controller.offset < 50);
-//     });
-//   }
+    controller.addListener(() {
+      isTitleShowing(controller.offset < 50);
+    });
+  }
 
-//   @override
-//   void dispose() {
-//     super.dispose();
-//     controller.dispose();
-//   }
-// }
+  @override
+  void dispose() {
+    super.dispose();
+    controller.dispose();
+  }
+}

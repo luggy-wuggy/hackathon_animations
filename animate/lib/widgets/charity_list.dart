@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 class CharityList extends StatelessWidget {
   CharityList({Key? key}) : super(key: key);
 
-  //final CharityScrollController _charityScrollController = Get.find();
+  final CharityScrollController _charityScrollController = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class CharityList extends StatelessWidget {
         },
         blendMode: BlendMode.dstOut,
         child: ListView.builder(
-          //controller: _charityScrollController.controller,
+          controller: _charityScrollController.controller,
           padding: const EdgeInsets.only(top: 20),
           itemCount: dummyCharities.length,
           physics: const BouncingScrollPhysics(),

@@ -65,56 +65,56 @@ class CategoryOption extends StatelessWidget {
   }
 }
 
-// class AnimatedCategoryOption extends StatelessWidget {
-//   final int index;
-//   final CategoryController _categoryController = Get.find();
-//   final CharityScrollController _scrollController = Get.find();
+class AnimatedCategoryOption extends StatelessWidget {
+  final int index;
+  final CategoryController _categoryController = Get.find();
+  final CharityScrollController _scrollController = Get.find();
 
-//   AnimatedCategoryOption({Key? key, required this.index}) : super(key: key);
+  AnimatedCategoryOption({Key? key, required this.index}) : super(key: key);
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return Obx(
-//       () {
-//         return GestureDetector(
-//           onTap: () {
-//             _categoryController.selectCategory(index);
-//           },
-//           child: Container(
-//             alignment: Alignment.topCenter,
-//             margin: const EdgeInsets.only(left: 25),
-//             child: Column(
-//               mainAxisAlignment: MainAxisAlignment.center,
-//               children: [
-//                 AnimatedDefaultTextStyle(
-//                   duration: const Duration(milliseconds: 320),
-//                   style: _categoryController.selectedCategoryIndex.value == index
-//                       ? _scrollController.isTitleShowing.value
-//                           ? kCategorySelected
-//                           : kCategorySelectedBig
-//                       : _scrollController.isTitleShowing.value
-//                           ? kCategoryUnselected
-//                           : kCategoryUnselectedBig,
-//                   child: Text(
-//                     _categoryController.categories[index],
-//                   ),
-//                 ),
-//                 const SizedBox(height: 5),
-//                 AnimatedContainer(
-//                   duration: const Duration(milliseconds: 200),
-//                   curve: Curves.easeInCirc,
-//                   height: _categoryController.selectedCategoryIndex.value == index ? 8 : 5,
-//                   width: _categoryController.selectedCategoryIndex.value == index ? 8 : 5,
-//                   decoration: BoxDecoration(
-//                     shape: BoxShape.circle,
-//                     color: _categoryController.selectedCategoryIndex.value == index ? Colors.deepOrange[300] : Colors.white,
-//                   ),
-//                 ),
-//               ],
-//             ),
-//           ),
-//         );
-//       },
-//     );
-//   }
-// }
+  @override
+  Widget build(BuildContext context) {
+    return Obx(
+      () {
+        return GestureDetector(
+          onTap: () {
+            _categoryController.selectCategory(index);
+          },
+          child: Container(
+            alignment: Alignment.topCenter,
+            margin: const EdgeInsets.only(left: 25),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                AnimatedDefaultTextStyle(
+                  duration: const Duration(milliseconds: 320),
+                  style: _categoryController.selectedCategoryIndex.value == index
+                      ? _scrollController.isTitleShowing.value
+                          ? kCategorySelected
+                          : kCategorySelectedBig
+                      : _scrollController.isTitleShowing.value
+                          ? kCategoryUnselected
+                          : kCategoryUnselectedBig,
+                  child: Text(
+                    _categoryController.categories[index],
+                  ),
+                ),
+                const SizedBox(height: 5),
+                AnimatedContainer(
+                  duration: const Duration(milliseconds: 200),
+                  curve: Curves.easeInCirc,
+                  height: _categoryController.selectedCategoryIndex.value == index ? 8 : 5,
+                  width: _categoryController.selectedCategoryIndex.value == index ? 8 : 5,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: _categoryController.selectedCategoryIndex.value == index ? Colors.deepOrange[300] : Colors.white,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+}

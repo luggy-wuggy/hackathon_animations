@@ -10,9 +10,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class HomePage extends StatelessWidget {
-  CategoryController charityController = Get.put(CategoryController());
-  // CharityScrollController charityScrollController = Get.put(CharityScrollController());
-  // SearchController searchController = Get.put(SearchController());
+  final CategoryController charityController = Get.put(CategoryController());
+
+  HomePage({Key? key}) : super(key: key);
+  CharityScrollController charityScrollController = Get.put(CharityScrollController());
+  SearchController searchController = Get.put(SearchController());
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +26,7 @@ class HomePage extends StatelessWidget {
         child: Column(
           children: [
             const HeaderWidget(),
-            const AppTitle(),
+            AnimatedTitle(),
             const CategoryList(),
             CharityList(),
           ],
