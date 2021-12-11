@@ -14,4 +14,10 @@
 //       isTitleShowing(controller.offset < 50);
 //     });
 //   }
+
+//   @override
+//   void dispose() {
+//     super.dispose();
+//     controller.dispose();
+//   }
 // }

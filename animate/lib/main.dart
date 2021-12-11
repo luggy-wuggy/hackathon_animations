@@ -1,4 +1,3 @@
-import 'package:animate/controllers/category_controller.dart';
 import 'package:animate/page/home.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

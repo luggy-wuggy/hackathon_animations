@@ -1,4 +1,6 @@
 import 'package:animate/controllers/category_controller.dart';
+import 'package:animate/controllers/charity_scroll_controller.dart';
+import 'package:animate/controllers/search_controller.dart';
 import 'package:animate/widgets/category_list.dart';
 import 'package:animate/widgets/charity_list.dart';
 import 'package:animate/widgets/header.dart';
@@ -9,6 +11,8 @@ import 'package:get/get.dart';
 
 class HomePage extends StatelessWidget {
   CategoryController charityController = Get.put(CategoryController());
+  // CharityScrollController charityScrollController = Get.put(CharityScrollController());
+  // SearchController searchController = Get.put(SearchController());
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +24,7 @@ class HomePage extends StatelessWidget {
         child: Column(
           children: [
             const HeaderWidget(),
-            AppTitle(),
+            const AppTitle(),
             const CategoryList(),
             CharityList(),
           ],
